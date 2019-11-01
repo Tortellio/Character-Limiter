@@ -34,10 +34,13 @@ namespace SDPlugins
         protected override void Load()
         {
             instance = this;
+            Rocket.Core.Logging.Logger.Log("CharLimiter has been loaded!");
             U.Events.OnPlayerConnected += Handler.PlayerJoined;
         }
         protected override void Unload()
         {
+            instance = null;
+            Rocket.Core.Logging.Logger.Log("CharLimiter has been loaded!");
             U.Events.OnPlayerConnected -= Handler.PlayerJoined;
         }
 
